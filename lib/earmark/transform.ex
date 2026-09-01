@@ -484,7 +484,7 @@ defmodule Earmark.Transform do
   defp _make_att1(name_value_pair, tag)
 
   defp _make_att1({name, value}, _) do
-    [" ", name, "=\"", value, "\""]
+    [" ", name, "=\"", String.replace(value, "\"", "&quot;"), "\""]
   end
 
   defp make_indent(options, level)
